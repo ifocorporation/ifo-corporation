@@ -1,4 +1,4 @@
-name: CI/CD for React Vite
+name: QA Testing Environment
 
 on:
   push:
