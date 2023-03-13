@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 dist
+docs
 ## Docker files
 #docker-compose.yml
 #Dockerfile.dev
