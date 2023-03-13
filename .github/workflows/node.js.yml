@@ -15,8 +15,9 @@ jobs:
         run: cd client && yarn install
       - name: Build application
         run: cd client && yarn build
-      - name: Deploy to production
+      - name: Deploy gh-pages application
         run: cd client && yarn deploy
+      - name: Deploy to production
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
