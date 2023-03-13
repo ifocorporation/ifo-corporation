@@ -4,7 +4,6 @@ export default defineConfig({
   plugins: [react()],
   base:"/client",
   build: {
-    outDir: 'docs',
     rollupOptions: {
       output: {
         format: 'esm',
