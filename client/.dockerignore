@@ -1,5 +1,7 @@
 node_modules
-../docker/Dockerfile
+docker-compose.yml
+Dockerfile.dev
+Dockerfile.prod
 .git
 .gitignore
 .dockerignore

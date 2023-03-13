@@ -1,5 +1,5 @@
-# Base image
-FROM node:16.14.0-alpine
+# Base image Node
+FROM node:16.14.0-alpine as build
 
 RUN apk add --no-cache libc6-compat
 # Set working directory
@@ -14,8 +14,15 @@ RUN yarn install --frozen-lockfile --non-interactive --cache-folder ./ycache
 # Copy all files to the container
 COPY . .
 
-# Expose port 5173 for development
-EXPOSE 5173
+# Build the app for production
+CMD ["yarn", "build"]
 
-# Start the app in development mode
-CMD ["yarn", "dev"]
+
+#Base image Nginx
+FROM nginx:latest
+
+# Copy files from dist directory to the nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
+
+
+
