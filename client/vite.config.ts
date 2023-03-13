@@ -27,5 +27,5 @@ export default defineConfig({
   server: {
     port: 3000
   },
-  base:"/ifo-corporation/client"
+  base:"/ifo-corporation"
 })
