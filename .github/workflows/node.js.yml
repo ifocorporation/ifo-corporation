@@ -3,7 +3,7 @@ name: CI/CD for React Vite
 on:
   push:
     branches:
-      - main
+      - staging
 
 jobs:
   build:
