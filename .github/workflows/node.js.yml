@@ -17,9 +17,5 @@ jobs:
         run: cd client && yarn build
       - name: Deploy to production
         uses: peaceiris/actions-gh-pages@v3
-        env:
-          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         with:
           publish_dir: ./client/dist
-
-
