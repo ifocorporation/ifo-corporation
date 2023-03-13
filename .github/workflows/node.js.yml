@@ -3,7 +3,7 @@ name: CI/CD for React Vite
 on:
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   build:
@@ -12,12 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: yarn install
+        run: cd client && yarn install
       - name: Build application
-        run: yarn build
+        run: cd client && yarn build
       - name: Deploy to production
         uses: peaceiris/actions-gh-pages@v3
         env:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         with:
-          publish_dir: ./dist
+          publish_dir: ./client/dist
