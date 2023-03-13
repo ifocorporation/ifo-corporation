@@ -21,3 +21,5 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         with:
           publish_dir: ./client/dist
+
+
