@@ -15,6 +15,10 @@ jobs:
         run: cd client && yarn install
       - name: Build application
         run: cd client && yarn build
+      - name: Grant additional permissions to GITHUB_TOKEN
+        run: |
+         echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+         gh auth refresh-token --scopes repo
       - name: Deploy application
         run: cd client && yarn deploy
       - name: Deploy to production
